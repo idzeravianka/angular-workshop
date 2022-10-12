@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr';
+@import '~bootswatch/dist/yeti/bootstrap.css';
+@import '~font-awesome/css/font-awesome.css';
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-input-check {
+  margin-right: 10px;
+  margin-left: -1.25rem;
+}

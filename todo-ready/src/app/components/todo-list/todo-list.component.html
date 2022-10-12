@@ -1,0 +1,20 @@
+<div class="card shadow mb-5">
+  <h5 class="card-header">My Todo List</h5>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let todo of todoList">
+      <li class="list-group-item" [ngClass]="{ 'list-group-item-success': todo.isCompleted, 'border-primary': todo.isCompleted }" (click)="redirectToDescription(todo)">
+        <div class="form-check d-inline">
+          <input type="checkbox" class="form-input-check" [id]="'complete' + todo.id" (change)="onChange(todo)" [checked]="todo.isCompleted">
+          <label [for]="'complete' + todo.id" class="form-check-label lead">{{todo.title}}</label>
+        </div>
+        <div class="float-right">
+          <span class="mx-3">{{todo.date | date}}</span>
+          <i class="fa fa-heart mx-3 btn" (click)='isFavorite(todo)' [ngClass]="todo.isFavorite? 'text-danger' : '' "></i>
+          <button class="btn btn-danger btn-sm mx-3" (click)="deleteTodo(todo)">x</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
